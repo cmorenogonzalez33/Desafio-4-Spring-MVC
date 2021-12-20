@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>LISTA DE CLIENTES</title>
+	
+	<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<body class="bd">
+	
+	<br /><br />
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h1> LISTA de Clientes </h1>
+		</div>
+		<br />
+		<table class="table table-striped">
+			<tr>
+				<thead>
+					<th>Nombre</th>
+					<th>Primer Apellido</th>
+					<th>Segundo Apellido</th>
+					<th>DNI</th>
+					<th></th>
+				</thead>
+			</tr>
+			<tr th:each="st_customer : ${cliente}">
+				<td th:text="${cliente.name}"> </td>
+				<td th:text="${cliente.surname1}"> </td>
+				<td th:text="${cliente.surname2}"> </td>
+				<td th:text="${cliente.doc_number}"> </td>
+			</tr>
+		</table>
+		<br/><br/>
+		<center> <a class="btn btn-info" href="/list"> VOLVER a Lista Clientes </a> </center>
+		<br/>
+	</div>
+	<br/><br/>
+	
+</body>
+</html>

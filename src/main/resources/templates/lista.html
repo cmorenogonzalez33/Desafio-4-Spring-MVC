@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Cliente Management System</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container my-2">
+        <h1>Employees List</h1>
+
+        <a th:href="@{/showNewClienteForm}" class="btn btn-primary btn-sm mb-3"> Add Cliente </a>
+
+        <table border="1" class="table table-striped table-responsive-md">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Pimer Apellido</th>
+                    <th>Segundo Apellido</th>
+                    <th>DNI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="st_customer : ${listClientes}">
+                    <td th:text="${cliente.name}"></td>
+                    <td th:text="${cliente.surname1}"></td>
+                    <td th:text="${cliente.surname2}"></td>
+                    <td th:text="${cliente.doc_number}"></td>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <a class="btn btn-info" href="/nuevo"> NUEVO Cliente </a>
+	<center> <a class="btn btn-info" href="/"> Volver a INICIO </a> </center>
+	<br/><br/>
+</body>
+
+</html>

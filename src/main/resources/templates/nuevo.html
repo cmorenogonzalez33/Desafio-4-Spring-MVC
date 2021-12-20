@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>INSERTAR Cliente</title>
+	
+	<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+</head>
+<body class="bd">
+
+	 <br/><br/>
+	 <div class="panel panel-info">
+	 	<div class="panel-heading">
+			 <center> <h2> FORMULARIO Clientes </h2> </center>
+		  </div>
+		<form action="#" th:action="@{/saveCliente}" th:object="${st_customer}" method="post" class="form-horizontal">
+		<fieldset>
+			<br/>
+			<!-- Text input-->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="textinput"> Nombre </label>
+				<div class="col-md-4">
+					<input type="text" id="textinput" name="textinput" class="form-control input-md" th:field="*{name}" placeholder="Nombre" /> 
+					<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="alert alert-danger" /> 
+				</div>
+			</div>
+			<br/>
+			<!-- Text input -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="textinput"> Primer Apellido </label>
+				<div class="col-md-4">
+					<input type="text" class="form-control input-md" id="text2" name="text2" th:field="*{surname1}" placeholder="Primer Apellido" /> 
+					<p th:if="${#fields.hasErrors('surname1')}" th:errors="*{surname1}" class="alert alert-danger" />  
+				</div>
+			</div>
+			<br/>
+			<!-- Text input -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="textinput"> Segundo Apellido </label>
+				<div class="col-md-4">
+					<input type="text" class="form-control input-md" id="text2" name="text2" th:field="*{surname2}" placeholder="Segundo Apellido" />  
+					<p th:if="${#fields.hasErrors('surname2')}" th:errors="*{surname2}" class="alert alert-danger" /> 
+				</div>
+			</div>
+			<!-- Text input -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="textinput"> DNI </label>
+				<div class="col-md-4">
+					<input type="text" class="form-control input-md" id="text2" name="text2" th:field="*{doc_number}" placeholder="DNI" />  
+					<p th:if="${#fields.hasErrors('doc_number')}" th:errors="*{doc_number}" class="alert alert-danger" /> 
+				</div>
+			</div>
+			<br/>
+			<!-- Button -->
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="singlebutton"> </label>
+				<div class="col-md-4">
+					<button id="singlebutton" name="singlebutton"
+						class="btn btn-primary"> ENVIAR </button>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+	</div>
+
+</body>
+</html>
